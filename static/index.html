@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriPredict | Smart Crop Recommendation</title>
+    <!-- Modern Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Phosphor Icons for modern iconography -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Decorative background elements -->
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class="ph-fill ph-plant"></i>
+            </div>
+            <h1>AgriPredict</h1>
+            <p>AI-Powered Crop Recommendation Engine</p>
+        </header>
+
+        <main class="glass-card">
+            <form id="predictionForm">
+                <div class="input-grid">
+                    <div class="input-group">
+                        <label for="N"><i class="ph ph-drop"></i> Nitrogen (N)</label>
+                        <input type="number" id="N" name="N" required step="any" placeholder="e.g. 90">
+                    </div>
+                    <div class="input-group">
+                        <label for="P"><i class="ph ph-flask"></i> Phosphorus (P)</label>
+                        <input type="number" id="P" name="P" required step="any" placeholder="e.g. 42">
+                    </div>
+                    <div class="input-group">
+                        <label for="K"><i class="ph ph-sparkle"></i> Potassium (K)</label>
+                        <input type="number" id="K" name="K" required step="any" placeholder="e.g. 43">
+                    </div>
+                    <div class="input-group">
+                        <label for="temperature"><i class="ph ph-thermometer"></i> Temperature (°C)</label>
+                        <input type="number" id="temperature" name="temperature" required step="any" placeholder="e.g. 20.8">
+                    </div>
+                    <div class="input-group">
+                        <label for="humidity"><i class="ph ph-cloud-fog"></i> Humidity (%)</label>
+                        <input type="number" id="humidity" name="humidity" required step="any" placeholder="e.g. 82.0">
+                    </div>
+                    <div class="input-group">
+                        <label for="ph"><i class="ph ph-test-tube"></i> pH Level</label>
+                        <input type="number" id="ph" name="ph" required step="any" placeholder="e.g. 6.5">
+                    </div>
+                    <div class="input-group">
+                        <label for="rainfall"><i class="ph ph-cloud-rain"></i> Rainfall (mm)</label>
+                        <input type="number" id="rainfall" name="rainfall" required step="any" placeholder="e.g. 202.9">
+                    </div>
+                </div>
+
+                <button type="submit" id="submitBtn">
+                    <span class="btn-text">Predict Best Crop</span>
+                    <i class="ph-bold ph-arrow-right btn-icon"></i>
+                    <div class="spinner hidden" id="loadingSpinner"></div>
+                </button>
+            </form>
+
+            <div id="resultContainer" class="result-container hidden">
+                <div class="result-icon">
+                    <i class="ph-fill ph-check-circle"></i>
+                </div>
+                <h3>Recommended Crop</h3>
+                <div class="result-highlight" id="predictionResult"></div>
+            </div>
+            
+            <div id="errorContainer" class="error-container hidden">
+                <i class="ph-fill ph-warning-circle"></i>
+                <p id="errorMessage"></p>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
